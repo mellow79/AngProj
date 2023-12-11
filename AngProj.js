@@ -103,23 +103,117 @@ if (Meteor.isClient) {
       },
       "submit .new-workout-log": function (event) {
         event.preventDefault();
-        // ... (add code to handle new workout log entry)
+        // This handles new workout log entry
+        // Get values from the form
+        var date = event.target.date.value;
+        var exercise = event.target.exercise.value;
+        var sets = parseInt(event.target.sets.value);
+        var reps = parseInt(event.target.reps.value);
+        var weight = parseFloat(event.target.weight.value);
+
+        // Insert a new workout log entry into the collection
+        WorkoutLog.insert({
+            date: date,
+            exercise: exercise,
+            sets: sets,
+            reps: reps,
+            weight: weight,
+            createdAt: new Date(),
+        });
+
+        // Clear the form
+        event.target.date.value = "";
+        event.target.exercise.value = "";
+        event.target.sets.value = "";
+        event.target.reps.value = "";
+        event.target.weight.value = "";
       },
       "submit .new-workout-session": function (event) {
         event.preventDefault();
-        // ... (add code to handle new workout session)
+        // Code to handle new workout session
+        // Get values from the form
+        var sessionDate = event.target.sessionDate.value;
+        var sessionType = event.target.sessionType.value;
+        var duration = parseInt(event.target.duration.value);
+
+        // Insert a new workout session into the collection
+        WorkoutSession.insert({
+            sessionDate: sessionDate,
+            sessionType: sessionType,
+            duration: duration,
+            createdAt: new Date(),
+        });
+
+        // Clear the form
+        event.target.sessionDate.value = "";
+        event.target.sessionType.value = "";
+        event.target.duration.value = "";
       },
       "submit .new-workout": function (event) {
         event.preventDefault();
         // ... (add code to handle new workout)
+        // Get values from the form
+        var workoutName = event.target.workoutName.value;
+        var exercise = event.target.exercise.value;
+        var sets = parseInt(event.target.sets.value);
+        var reps = parseInt(event.target.reps.value);
+        var restTime = parseInt(event.target.restTime.value);
+
+        // Insert a new workout into the collection
+        Workout.insert({
+            workoutName: workoutName,
+            exercise: exercise,
+            sets: sets,
+            reps: reps,
+            restTime: restTime,
+            createdAt: new Date(),
+        });
+
+        // Clear the form
+        event.target.workoutName.value = "";
+        event.target.exercise.value = "";
+        event.target.sets.value = "";
+        event.target.reps.value = "";
+        event.target.restTime.value = "";
       },
       "submit .new-schedule": function (event) {
         event.preventDefault();
-        // ... (add code to handle new schedule)
+        // Code to handle new schedule
+        // Get values from the form
+        var scheduleName = event.target.scheduleName.value;
+        var startDate = event.target.startDate.value;
+        var endDate = event.target.endDate.value;
+
+        // Insert a new schedule into the collection
+        Schedule.insert({
+            scheduleName: scheduleName,
+            startDate: startDate,
+            endDate: endDate,
+            createdAt: new Date(),
+        });
+
+        // Clear the form
+        event.target.scheduleName.value = "";
+        event.target.startDate.value = "";
+        event.target.endDate.value = "";
       },
       "submit .new-schedule-step": function (event) {
         event.preventDefault();
-        // ... (add code to handle new schedule step)
+        // Code to handle new schedule step
+        // Get values from the form
+        var stepName = event.target.stepName.value;
+        var stepDescription = event.target.stepDescription.value;
+
+        // Insert a new schedule step into the collection
+        ScheduleStep.insert({
+            stepName: stepName,
+            stepDescription: stepDescription,
+            createdAt: new Date(),
+        });
+
+        // Clear the form
+        event.target.stepName.value = "";
+        event.target.stepDescription.value = "";
       },
 
     // Add similar events for other collections

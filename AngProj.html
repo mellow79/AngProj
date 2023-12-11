@@ -14,13 +14,12 @@
         <form class="new-task">
             <input type="text" name="text" placeholder="Type to add new tasks" />
             <button type="submit">Add Task</button>
-        </form>
-    </header>
-    <ul>
+      </form>
+      <ul>
       {{#each tasks}}
       {{> task}}
       {{/each}}
-    </ul>
+      </ul>
   </section>
 
   <section id="settings">
@@ -39,7 +38,21 @@
   <section id="workoutLog">
     <h2>Workout Log</h2>
     <form class="new-workout-log">
-      <!-- Add form fields for new workout log entry -->
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+  
+      <label for="exercise">Exercise:</label>
+      <input type="text" id="exercise" name="exercise" placeholder="Enter exercise" required />
+  
+      <label for="sets">Sets:</label>
+      <input type="number" id="sets" name="sets" placeholder="Enter number of sets" required />
+  
+      <label for="reps">Reps:</label>
+      <input type="number" id="reps" name="reps" placeholder="Enter number of reps" required />
+  
+      <label for="weight">Weight (lbs):</label>
+      <input type="number" id="weight" name="weight" step="any" placeholder="Enter weight" required />
+  
       <button type="submit">Add Workout Log</button>
     </form>
     <ul>
@@ -52,7 +65,15 @@
   <section id="workoutSession">
     <h2>Workout Session</h2>
     <form class="new-workout-session">
-      <!-- Add form fields for new workout session -->
+      <label for="sessionDate">Session Date:</label>
+      <input type="date" id="sessionDate" name="sessionDate" required />
+  
+      <label for="sessionType">Session Type:</label>
+      <input type="text" id="sessionType" name="sessionType" placeholder="Enter session type" required />
+  
+      <label for="duration">Duration (minutes):</label>
+      <input type="number" id="duration" name="duration" placeholder="Enter session duration" required />
+
       <button type="submit">Add Workout Session</button>
     </form>
     <ul>
@@ -65,7 +86,23 @@
   <section id="workout">
     <h2>Workout</h2>
     <form class="new-workout">
-      <!-- Add form fields for new workout -->
+      <label for="workoutName">Workout Name:</label>
+      <input type="text" id="workoutName" name="workoutName" placeholder="Enter workout name" required />
+  
+      <label for="exercise">Exercise:</label>
+      <input type="text" id="exercise" name="exercise" placeholder="Enter exercise" required />
+  
+      <label for="sets">Sets:</label>
+      <input type="number" id="sets" name="sets" placeholder="Enter number of sets" required />
+  
+      <label for="reps">Reps:</label>
+      <input type="number" id="reps" name="reps" placeholder="Enter number of reps" required />
+  
+      <label for="restTime">Rest Time (seconds):</label>
+      <input type="number" id="restTime" name="restTime" placeholder="Enter rest time" required />
+  
+      <!-- Add more fields as needed for your workout -->
+  
       <button type="submit">Add Workout</button>
     </form>
     <ul>
@@ -78,7 +115,17 @@
   <section id="schedule">
     <h2>Schedule</h2>
     <form class="new-schedule">
-      <!-- Add form fields for new schedule -->
+      <label for="scheduleName">Schedule Name:</label>
+      <input type="text" id="scheduleName" name="scheduleName" placeholder="Enter schedule name" required />
+  
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" name="startDate" required />
+  
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" name="endDate" required />
+  
+      <!-- Add more fields as needed for your schedule -->
+  
       <button type="submit">Add Schedule</button>
     </form>
     <ul>
@@ -91,7 +138,14 @@
   <section id="scheduleStep">
     <h2>Schedule Step</h2>
     <form class="new-schedule-step">
-      <!-- Add form fields for new schedule step -->
+      <label for="stepName">Step Name:</label>
+      <input type="text" id="stepName" name="stepName" placeholder="Enter step name" required />
+  
+      <label for="stepDescription">Step Description:</label>
+      <textarea id="stepDescription" name="stepDescription" placeholder="Enter step description" required></textarea>
+  
+      <!-- Add more fields as needed for your schedule step -->
+  
       <button type="submit">Add Schedule Step</button>
     </form>
     <ul>
