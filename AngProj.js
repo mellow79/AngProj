@@ -27,6 +27,21 @@ if (Meteor.isClient) {
     days: function () {
         return Days.find();
     },
+    workoutLogs: function () {
+        return WorkoutLog.find();
+      },
+      workoutSessions: function () {
+        return WorkoutSession.find();
+      },
+      workouts: function () {
+        return Workout.find();
+      },
+      schedules: function () {
+        return Schedule.find();
+      },
+      scheduleSteps: function () {
+        return ScheduleStep.find();
+      },
     // Add similar helpers for other collections
   });
 
@@ -61,6 +76,50 @@ if (Meteor.isClient) {
         // Clear form
         event.target.settingName.value = "";
         event.target.settingValue.value = "";
+      },
+      "submit .new-set": function (event) {
+        event.preventDefault();
+        var setName = event.target.setName.value;
+  
+        // Insert a set into the collection
+        Sets.insert({
+          setName: setName,
+        });
+  
+        // Clear form
+        event.target.setName.value = "";
+      },
+      "submit .new-day": function (event) {
+        event.preventDefault();
+        var dayName = event.target.dayName.value;
+  
+        // Insert a day into the collection
+        Days.insert({
+          dayName: dayName,
+        });
+  
+        // Clear form
+        event.target.dayName.value = "";
+      },
+      "submit .new-workout-log": function (event) {
+        event.preventDefault();
+        // ... (add code to handle new workout log entry)
+      },
+      "submit .new-workout-session": function (event) {
+        event.preventDefault();
+        // ... (add code to handle new workout session)
+      },
+      "submit .new-workout": function (event) {
+        event.preventDefault();
+        // ... (add code to handle new workout)
+      },
+      "submit .new-schedule": function (event) {
+        event.preventDefault();
+        // ... (add code to handle new schedule)
+      },
+      "submit .new-schedule-step": function (event) {
+        event.preventDefault();
+        // ... (add code to handle new schedule step)
       },
 
     // Add similar events for other collections

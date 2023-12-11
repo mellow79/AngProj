@@ -36,6 +36,70 @@
       {{/each}}
     </ul>
   </section>
+  <section id="workoutLog">
+    <h2>Workout Log</h2>
+    <form class="new-workout-log">
+      <!-- Add form fields for new workout log entry -->
+      <button type="submit">Add Workout Log</button>
+    </form>
+    <ul>
+      {{#each workoutLogs}}
+      {{> workoutLog}}
+      {{/each}}
+    </ul>
+  </section>
+
+  <section id="workoutSession">
+    <h2>Workout Session</h2>
+    <form class="new-workout-session">
+      <!-- Add form fields for new workout session -->
+      <button type="submit">Add Workout Session</button>
+    </form>
+    <ul>
+      {{#each workoutSessions}}
+      {{> workoutSession}}
+      {{/each}}
+    </ul>
+  </section>
+
+  <section id="workout">
+    <h2>Workout</h2>
+    <form class="new-workout">
+      <!-- Add form fields for new workout -->
+      <button type="submit">Add Workout</button>
+    </form>
+    <ul>
+      {{#each workouts}}
+      {{> workout}}
+      {{/each}}
+    </ul>
+  </section>
+
+  <section id="schedule">
+    <h2>Schedule</h2>
+    <form class="new-schedule">
+      <!-- Add form fields for new schedule -->
+      <button type="submit">Add Schedule</button>
+    </form>
+    <ul>
+      {{#each schedules}}
+      {{> schedule}}
+      {{/each}}
+    </ul>
+  </section>
+
+  <section id="scheduleStep">
+    <h2>Schedule Step</h2>
+    <form class="new-schedule-step">
+      <!-- Add form fields for new schedule step -->
+      <button type="submit">Add Schedule Step</button>
+    </form>
+    <ul>
+      {{#each scheduleSteps}}
+      {{> scheduleStep}}
+      {{/each}}
+    </ul>
+  </section>
   </div>
 </body>
 
@@ -67,4 +131,24 @@
     <span class="dayName">{{dayName}}</span>
     <!-- Add buttons or links for additional actions if needed -->
   </li>
+</template>
+
+<template name="workoutLog">
+  <!-- Define the structure for displaying a workout log entry -->
+</template>
+
+<template name="workoutSession">
+  <!-- Define the structure for displaying a workout session -->
+</template>
+
+<template name="workout">
+  <!-- Define the structure for displaying a workout -->
+</template>
+
+<template name="schedule">
+  <!-- Define the structure for displaying a schedule -->
+</template>
+
+<template name="scheduleStep">
+  <!-- Define the structure for displaying a schedule step -->
 </template>
